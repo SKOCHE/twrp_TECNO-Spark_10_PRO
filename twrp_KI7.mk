@@ -25,10 +25,13 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 # Installs gsi keys into ramdisk, to boot a developer GSI with verified boot.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
+# Virtual A/B OTA
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
+
 # Inherit from KI7 device
 $(call inherit-product, device/Tecno/KI7/device.mk)
 
-# Inherit some common TWRP stuff
+# Inherit some common TWRP stuff.
 $(call inherit-product, vendor/twrp/config/common.mk)
 
 
@@ -40,6 +43,8 @@ PRODUCT_MODEL := TECNO KI7
 PRODUCT_MANUFACTURER := TECNO
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-PRIVATE_BUILD_DESC="vnd_ki7_v7510-user 12 SP1A.210812.016 354590 release-keys"
+    TARGET_DEVICE=TECNO-KI7 \
+    PRODUCT_NAME=KI7-GL \
+    PRIVATE_BUILD_DESC="vnd_ki7_v7510-user 12 SP1A.210812.016 354590 release-keys"
 
 BUILD_FINGERPRINT := TECNO/KI7-GL/TECNO-KI7:12/SP1A.210812.016/230615V2244:user/release-keys
