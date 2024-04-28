@@ -140,5 +140,5 @@ on post-fs-data
     mkdir /data/vendor_de/0 0770 system system 
 
 on boot
-     start boot-hal-1-1
+     start boot-hal-1-2
      start health-hal-2-1
