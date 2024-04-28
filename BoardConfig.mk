@@ -161,14 +161,6 @@ BOARD_ROOT_EXTRA_FOLDERS += tranfs
 BOARD_USES_METADATA_PARTITION := true
 BOARD_ROOT_EXTRA_FOLDERS += metadata tranfs
 
-# Crypto
-TW_INCLUDE_CRYPTO := false
-
-TW_CRYPTO_FS_TYPE := "f2fs"
-TW_CRYPTO_REAL_BLKDEV := "/dev/block/by-name/userdata"
-TW_CRYPTO_MNT_POINT := "/data"
-#TW_CRYPTO_FS_OPTIONS := "nosuid,nodev,noatime,discard,noauto_da_alloc,data=ordered"
-TW_CRYPTO_FS_OPTIONS := "rw,seclabel,nosuid,nodev,noatime,noauto_da_alloc,inlinecrypt,resgid=1065,errors=panic,data=ordered"
 
 # Additional binaries & libraries needed for recovery
 #TARGET_RECOVERY_DEVICE_MODULES += \
@@ -211,10 +203,6 @@ TW_INCLUDE_NTFS_3G := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_EXCLUDE_TWRPAPP := true
 TW_EXCLUDE_APEX := true
-
-# Fix stock .ozip installation
-TW_SKIP_COMPATIBILITY_CHECK := true
-TW_OZIP_DECRYPT_KEY := 0000
 
 # resetprop and magiskboot
 TW_INCLUDE_RESETPROP := true
