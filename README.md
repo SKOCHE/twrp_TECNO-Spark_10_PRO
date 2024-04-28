@@ -1,4 +1,4 @@
-# Android device tree for Tecno Spark 10PRO
+# Android device tree for Tecno Spark 10 PRO
 ```
 #
 # Copyright (C) 2023 The Android Open Source Project
